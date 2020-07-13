@@ -3,10 +3,10 @@ import { config as envConfig } from 'dotenv'
 envConfig()
 
 const connection = ()=>{
-    console.log(`connection string: -  ${process.env.HOST_DB}:${process.env.PORT_DB}/${process.env.NAME_DB}`)
+    console.log(`connection string: -  mongodb://localhost:27017/tasks`)
     
     const options = {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true}
-    mongoose.connect(`mongodb://${process.env.HOST_DB}:${process.env.PORT_DB}/${process.env.NAME_DB}`, options)
+    mongoose.connect(`mongodb://localhost:27017/tasks`, options)
     .then(()=>{
         console.log('Successfully connect to MongoDB')
     })
